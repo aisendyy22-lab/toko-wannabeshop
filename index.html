@@ -71,4 +71,98 @@
                         </div>
                     </div>
                 </div>
-                <div class="min-w-[160px
+                <div class="min-w-[160px] cursor-pointer group" onclick="addToCart('Sepatu Running Sport')">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=200" class="rounded-sm w-full h-40 object-cover">
+                        <div class="absolute top-0 right-0 bg-yellow-300 text-[#ee4d2d] text-[10px] font-bold px-1.5 py-0.5">-30%</div>
+                    </div>
+                    <div class="mt-2">
+                        <p class="text-[#ee4d2d] font-bold text-lg text-center">Rp150.000</p>
+                        <div class="w-full bg-orange-200 h-4 rounded-full mt-1 relative overflow-hidden">
+                            <div class="bg-gradient-to-r from-orange-500 to-red-600 h-full w-[90%]"></div>
+                            <span class="absolute inset-0 text-[9px] text-white font-bold flex items-center justify-center uppercase">Hampir Habis</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <h2 class="text-gray-500 uppercase text-sm font-bold tracking-widest mb-4 border-b-2 border-[#ee4d2d] inline-block pb-1">Rekomendasi Baru</h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-2">
+            
+            <div class="product-card bg-white border border-transparent hover:border-[#ee4d2d] transition-all cursor-pointer flex flex-col" onclick="addToCart('Kaos Polos Cotton Combed')">
+                <img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?w=300" class="w-full aspect-square object-cover">
+                <div class="p-2 flex-1 flex flex-col">
+                    <h3 class="text-xs line-clamp-2 mb-2 text-gray-800">Wannabeshop - Kaos Polos Cotton Combed 30s Kualitas Distro Original</h3>
+                    <div class="mt-auto">
+                        <div class="flex justify-between items-center mb-1">
+                            <span class="text-[#ee4d2d] font-medium text-base">Rp45.000</span>
+                        </div>
+                        <div class="flex items-center gap-1 mb-2">
+                            <div class="flex text-yellow-400 text-[9px]">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                            <span class="text-[10px] text-gray-400">| Terjual 1,2rb</span>
+                        </div>
+                        <div class="text-[10px] text-gray-500 flex items-center gap-1">
+                            <i class="fa-solid fa-location-dot"></i> Kota Tangerang
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card bg-white border border-transparent hover:border-[#ee4d2d] transition-all cursor-pointer flex flex-col" onclick="addToCart('Smartphone Promo')">
+                <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=300" class="w-full aspect-square object-cover">
+                <div class="p-2 flex-1 flex flex-col">
+                    <h3 class="text-xs line-clamp-2 mb-2 text-gray-800">Wannabeshop - Smartphone Android 5G Murah Garansi Resmi</h3>
+                    <div class="mt-auto">
+                        <div class="flex justify-between items-center mb-1">
+                            <span class="text-[#ee4d2d] font-medium text-base">Rp1.200.000</span>
+                        </div>
+                        <div class="flex items-center gap-1 mb-2">
+                            <div class="flex text-yellow-400 text-[9px]">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i>
+                            </div>
+                            <span class="text-[10px] text-gray-400">| Terjual 88</span>
+                        </div>
+                        <div class="text-[10px] text-gray-500 flex items-center gap-1">
+                            <i class="fa-solid fa-location-dot"></i> DKI Jakarta
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="bg-white border-t mt-12 py-8 text-center text-gray-400 text-xs">
+        <div class="flex justify-center gap-4 mb-4 text-lg">
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-twitter"></i>
+        </div>
+        <p>© 2026 Wannabeshop Official Store. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        let count = 0;
+        function addToCart(name) {
+            count++;
+            const badge = document.getElementById('cart-count');
+            badge.innerText = count;
+            badge.classList.remove('hidden');
+            
+            // Animasi Bounce pada Keranjang
+            badge.parentElement.classList.add('animate-bounce');
+            setTimeout(() => badge.parentElement.classList.remove('animate-bounce'), 500);
+
+            // Pesan Konfirmasi yang lebih keren
+            const toast = document.createElement('div');
+            toast.className = "fixed top-20 right-5 bg-black/80 text-white px-6 py-3 rounded-md shadow-2xl text-sm z-[100] border-l-4 border-green-500 transition-all";
+            toast.innerHTML = `<i class="fa-solid fa-circle-check text-green-500 mr-2"></i> ${name} ditambahkan!`;
+            document.body.appendChild(toast);
+            setTimeout(() => { toast.style.opacity = '0'; setTimeout(() => toast.remove(), 500); }, 2000);
+        }
+    </script>
+</body>
+</html>
