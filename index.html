@@ -3,120 +3,238 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wannabeshop Official Store</title>
+    <title>Wannabeshop Official | Kaos Distro Premium</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        body { background-color: #f5f5f5; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; }
-        .shopee-orange { color: #ee4d2d; }
-        .bg-shopee-orange { background-color: #ee4d2d; }
-        .line-clamp-2 { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
-        .product-card:hover { transform: translateY(-2px); box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
-        .star-badge { background-color: #ee4d2d; color: white; padding: 0 4px; border-radius: 2px; font-size: 10px; font-weight: bold; }
+        body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; background-color: #f5f5f5; }
+        .shopee-bg { background-color: #ee4d2d; }
+        .shopee-text { color: #ee4d2d; }
+        .product-card:hover { transform: translateY(-2px); box-shadow: 0 4px 10px rgba(0,0,0,0.1); border: 1px solid #ee4d2d; }
+        /* Animasi Pop */
+        @keyframes pop { 0% { transform: scale(1); } 50% { transform: scale(1.2); } 100% { transform: scale(1); } }
+        .pop-anim { animation: pop 0.3s ease-in-out; }
     </style>
 </head>
 <body>
 
-    <header class="bg-white border-b sticky top-0 z-50">
-        <div class="container mx-auto px-4 py-3 flex items-center justify-between">
-            <div class="text-3xl font-bold text-[#ee4d2d] tracking-tighter">Wannabeshop</div>
-            <div class="flex-1 mx-6 hidden md:block">
-                <div class="flex border-2 border-[#ee4d2d] rounded-sm overflow-hidden">
-                    <input type="text" placeholder="Cari di Wannabeshop Official" class="w-full p-2 px-4 outline-none">
-                    <button class="bg-[#ee4d2d] text-white px-6"><i class="fa-solid fa-magnifying-glass"></i></button>
+    <header class="bg-white border-b sticky top-0 z-50 shadow-sm">
+        <div class="container mx-auto px-4 py-3 flex items-center justify-between gap-4">
+            <div class="flex items-center gap-2">
+                <div class="text-2xl font-bold shopee-text tracking-tighter">Wannabeshop</div>
+                <div class="bg-[#ee4d2d] text-white text-xs px-1 rounded transform -skew-x-12">Official</div>
+            </div>
+
+            <div class="hidden md:flex flex-1 max-w-2xl">
+                <div class="flex w-full border-2 border-[#ee4d2d] rounded-sm overflow-hidden">
+                    <input type="text" placeholder="Diskon Rp5RB untuk Kaos Hulk..." class="w-full px-4 py-2 outline-none text-sm">
+                    <button class="shopee-bg text-white px-6"><i class="fa-solid fa-magnifying-glass"></i></button>
                 </div>
             </div>
-            <div class="flex items-center gap-5 text-gray-600">
-                <i class="fa-solid fa-cart-shopping text-xl cursor-pointer"></i>
-                <i class="fa-regular fa-user text-xl cursor-pointer"></i>
+
+            <div class="flex items-center gap-6 text-gray-600">
+                <div class="relative cursor-pointer" onclick="toggleCart()">
+                    <i class="fa-solid fa-cart-shopping text-2xl hover:text-[#ee4d2d]"></i>
+                    <span id="cart-badge" class="absolute -top-2 -right-2 shopee-bg text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full hidden">0</span>
+                </div>
+                <button class="text-sm font-medium hover:text-[#ee4d2d]">Login</button>
             </div>
         </div>
     </header>
 
-    <main class="container mx-auto px-4 py-6">
-        
-        <section class="bg-white p-4 rounded-sm shadow-sm mb-6 border-b-4 border-[#ee4d2d]">
-            <div class="flex items-center justify-between mb-4">
-                <div class="flex items-center gap-3">
-                    <h2 class="text-xl font-bold text-[#ee4d2d] italic uppercase">Flash Sale</h2>
-                    <div class="flex gap-1 text-white text-xs font-bold items-center">
-                        <span class="bg-black p-1 rounded-sm">02</span> :
-                        <span class="bg-black p-1 rounded-sm">15</span> :
-                        <span class="bg-black p-1 rounded-sm">45</span>
-                    </div>
-                </div>
-                <a href="#" class="text-[#ee4d2d] text-sm">Lihat Semua ></a>
+    <div class="bg-white border-b mb-4">
+        <div class="container mx-auto px-4 py-6 flex flex-col md:flex-row items-center gap-6">
+            <div class="relative">
+                <img src="https://ui-avatars.com/api/?name=Wannabe+Shop&background=ee4d2d&color=fff&size=128" class="w-20 h-20 rounded-full border-4 border-gray-100 shadow">
+                <div class="absolute bottom-0 bg-black text-white text-[10px] px-2 py-0.5 left-1/2 -translate-x-1/2 uppercase font-bold">Shopee Mall</div>
             </div>
-            <div class="flex gap-4 overflow-x-auto pb-2 scrollbar-hide">
-                <div class="min-w-[170px] cursor-pointer">
-                    <div class="relative">
-                        <img src="https://cf.shopee.co.id/file/sg-11134201-22120-7u6v7q2v2jlv6c" class="w-full h-44 object-cover">
-                        <div class="absolute top-0 right-0 bg-yellow-300 text-[#ee4d2d] text-[10px] font-bold px-1.5 py-0.5">-50%</div>
-                    </div>
-                    <div class="p-2 text-center">
-                        <p class="text-[#ee4d2d] font-bold text-lg">Rp89.500</p>
-                        <div class="w-full bg-orange-100 h-4 rounded-full mt-1 relative overflow-hidden">
-                            <div class="bg-gradient-to-r from-orange-500 to-red-600 h-full w-[80%]"></div>
-                            <span class="absolute inset-0 text-[9px] text-white flex items-center justify-center font-bold">TERJUAL 45</span>
-                        </div>
-                    </div>
+            <div class="text-center md:text-left flex-1">
+                <h1 class="text-xl font-bold text-gray-800">Wannabeshop Official Store <i class="fa-solid fa-circle-check text-[#ee4d2d]"></i></h1>
+                <div class="flex flex-wrap justify-center md:justify-start gap-4 text-xs text-gray-500 mt-2">
+                    <span><i class="fa-solid fa-star text-yellow-400"></i> 4.9 Penilaian</span>
+                    <span><i class="fa-solid fa-box text-gray-400"></i> 100% Original</span>
+                    <span><i class="fa-solid fa-clock text-green-500"></i> Kirim Tiap Hari</span>
                 </div>
             </div>
-        </section>
+            <div class="flex gap-2">
+                <a href="https://wa.me/628123456789" target="_blank" class="border border-[#ee4d2d] text-[#ee4d2d] px-6 py-2 text-sm font-medium rounded-sm hover:bg-orange-50"><i class="fa-brands fa-whatsapp"></i> Chat Penjual</a>
+            </div>
+        </div>
+    </div>
 
-        <div class="flex justify-between items-center mb-4">
-            <h2 class="text-gray-500 uppercase text-sm font-bold tracking-widest">KAMU MUNGKIN SUKA</h2>
-            <a href="#" class="text-[#ee4d2d] text-sm">Lihat Semua ></a>
+    <main class="container mx-auto px-4 pb-12">
+        <div class="flex items-center justify-between mb-4 px-2 border-l-4 border-[#ee4d2d]">
+            <h2 class="text-lg font-bold text-gray-700 uppercase">Koleksi Terlaris</h2>
+            <span class="text-xs text-[#ee4d2d] cursor-pointer">Lihat Semua ></span>
         </div>
 
-        <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-2 md:gap-3">
-            
-            <div class="product-card bg-white border border-transparent hover:border-[#ee4d2d] transition-all cursor-pointer flex flex-col">
-                <div class="relative">
-                    <img src="https://cf.shopee.co.id/file/sg-11134201-22120-7u6v7q2v2jlv6c" class="w-full aspect-square object-cover">
-                    <img src="https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/assets/c133c6d32847c166.png" class="absolute top-0 left-0 w-8">
-                </div>
-                <div class="p-2 flex-1 flex flex-col">
-                    <h3 class="text-xs line-clamp-2 mb-2 text-gray-800">
-                        <span class="star-badge">Star+</span> Kaos Superhero Hulk Dewasa S-7XL Big Size & Jumbo
-                    </h3>
-                    <div class="mt-auto">
-                        <p class="text-[#ee4d2d] font-medium text-base">Rp89.500</p>
-                        <div class="bg-orange-100 text-[#ee4d2d] text-[10px] inline-block px-1 rounded-sm mb-2">Diskon Rp5RB</div>
-                        <div class="flex items-center gap-1 text-[10px] text-gray-500">
-                            <span class="text-yellow-500"><i class="fa-solid fa-star"></i> 4.9</span>
-                            <span>| 66 terjual</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="product-card bg-white border border-transparent hover:border-[#ee4d2d] transition-all cursor-pointer flex flex-col">
-                <div class="relative">
-                    <img src="https://cf.shopee.co.id/file/sg-11134201-22120-ov3v7q2v2jlv7d" class="w-full aspect-square object-cover">
-                    <img src="https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/assets/c133c6d32847c166.png" class="absolute top-0 left-0 w-8">
-                </div>
-                <div class="p-2 flex-1 flex flex-col">
-                    <h3 class="text-xs line-clamp-2 mb-2 text-gray-800">
-                        <span class="star-badge">Star+</span> KAOS TOKOH CHE GUEVARA SIZE S - 7XL JUMBO
-                    </h3>
-                    <div class="mt-auto">
-                        <p class="text-[#ee4d2d] font-medium text-base">Rp89.500</p>
-                        <div class="bg-orange-100 text-[#ee4d2d] text-[10px] inline-block px-1 rounded-sm mb-2">Diskon Rp5RB</div>
-                        <div class="flex items-center gap-1 text-[10px] text-gray-500">
-                            <span class="text-yellow-500"><i class="fa-solid fa-star"></i> 4.8</span>
-                            <span>| 73 terjual</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
+        <div id="product-list" class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-2 md:gap-4">
             </div>
     </main>
 
-    <footer class="bg-white border-t mt-12 py-8 text-center text-gray-400 text-xs">
-        <p>© 2026 Wannabeshop Official Store. All Rights Reserved.</p>
-    </footer>
+    <div id="cart-modal" class="fixed inset-0 bg-black bg-opacity-50 z-[100] hidden flex justify-end">
+        <div class="bg-white w-full max-w-sm h-full shadow-xl flex flex-col transform transition-transform translate-x-full duration-300" id="cart-content">
+            <div class="p-4 border-b flex justify-between items-center bg-gray-50">
+                <h2 class="font-bold text-lg"><i class="fa-solid fa-cart-shopping shopee-text"></i> Keranjang Saya</h2>
+                <button onclick="toggleCart()" class="text-gray-400 hover:text-red-500"><i class="fa-solid fa-xmark text-xl"></i></button>
+            </div>
+            
+            <div id="cart-items" class="flex-1 overflow-y-auto p-4 space-y-4">
+                <p class="text-center text-gray-400 text-sm mt-10">Keranjang masih kosong nih.</p>
+            </div>
 
+            <div class="p-4 border-t bg-gray-50">
+                <div class="flex justify-between font-bold text-lg mb-4">
+                    <span>Total:</span>
+                    <span id="cart-total" class="shopee-text">Rp0</span>
+                </div>
+                <button onclick="checkoutWA()" class="w-full shopee-bg text-white py-3 rounded-sm font-bold hover:opacity-90 transition">
+                    Checkout via WhatsApp <i class="fa-brands fa-whatsapp ml-1"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div id="toast" class="fixed bottom-10 left-1/2 -translate-x-1/2 bg-gray-800 text-white px-6 py-3 rounded shadow-lg text-sm hidden z-[110] transition-opacity duration-300">
+        Produk berhasil ditambahkan!
+    </div>
+
+    <script>
+        // 1. DATA PRODUK (GANTI GAMBAR DI SINI)
+        // Ganti 'placeholder.jpg' dengan nama file gambar yang kamu upload ke GitHub (misal: 'hulk.jpg')
+        const products = [
+            { id: 1, name: "Kaos Superhero Hulk Dewasa S-7XL", price: 89500, sold: 66, img: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=400&auto=format&fit=crop&q=60" },
+            { id: 2, name: "KAOS TOKOH CHE GUEVARA S-7XL", price: 89500, sold: 73, img: "https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=400&auto=format&fit=crop&q=60" },
+            { id: 3, name: "KAOS BOLA CR7 JUVENTUS S-7XL", price: 89500, sold: 98, img: "https://images.unsplash.com/photo-1503341455253-b2e72333dbdb?w=400&auto=format&fit=crop&q=60" },
+            { id: 4, name: "Kaos DISTRO DREAM THEATER", price: 89500, sold: 64, img: "https://images.unsplash.com/photo-1529374255404-311a2a4f1fd9?w=400&auto=format&fit=crop&q=60" },
+            { id: 5, name: "Kaos Band The Eagles Hotel California", price: 89500, sold: 7, img: "https://images.unsplash.com/photo-1503342394128-c104d54dba01?w=400&auto=format&fit=crop&q=60" },
+            { id: 6, name: "Kaos Superhero Punisher Dewasa", price: 89500, sold: 32, img: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?w=400&auto=format&fit=crop&q=60" }
+        ];
+
+        let cart = [];
+
+        // 2. TAMPILKAN PRODUK KE LAYAR
+        const productList = document.getElementById('product-list');
+        
+        products.forEach(product => {
+            const card = document.createElement('div');
+            card.className = "product-card bg-white border border-transparent rounded-sm overflow-hidden cursor-pointer flex flex-col transition-all duration-200";
+            card.innerHTML = `
+                <div class="relative group">
+                    <img src="${product.img}" alt="${product.name}" class="w-full aspect-square object-cover">
+                    <div class="absolute top-0 right-0 bg-yellow-400 text-red-600 text-[10px] font-bold px-1.5 py-0.5">STAR+</div>
+                    <button onclick="addToCart(${product.id})" class="absolute bottom-0 w-full bg-[#ee4d2d] text-white py-2 text-sm font-bold translate-y-full group-hover:translate-y-0 transition-transform duration-200 md:block hidden">
+                        + Keranjang
+                    </button>
+                </div>
+                <div class="p-2 flex-1 flex flex-col" onclick="addToCart(${product.id})">
+                    <h3 class="text-xs text-gray-800 line-clamp-2 mb-1 leading-relaxed">${product.name}</h3>
+                    <div class="mt-auto">
+                        <div class="flex items-center gap-1 mb-1">
+                            <span class="bg-orange-100 text-[#ee4d2d] text-[9px] px-1 rounded-sm">Diskon Rp5RB</span>
+                        </div>
+                        <div class="flex justify-between items-end">
+                            <span class="shopee-text font-medium text-base">Rp${product.price.toLocaleString('id-ID')}</span>
+                            <span class="text-[10px] text-gray-400">${product.sold} Terjual</span>
+                        </div>
+                    </div>
+                </div>
+            `;
+            productList.appendChild(card);
+        });
+
+        // 3. FUNGSI KERANJANG
+        function addToCart(id) {
+            const item = products.find(p => p.id === id);
+            cart.push(item);
+            updateCartUI();
+            
+            // Efek Notifikasi
+            const toast = document.getElementById('toast');
+            toast.classList.remove('hidden');
+            setTimeout(() => toast.classList.add('hidden'), 2000);
+        }
+
+        function updateCartUI() {
+            // Update Angka Badge
+            const badge = document.getElementById('cart-badge');
+            badge.innerText = cart.length;
+            badge.classList.remove('hidden');
+            badge.classList.add('pop-anim');
+            setTimeout(() => badge.classList.remove('pop-anim'), 300);
+
+            // Update List di Modal
+            const cartItemsContainer = document.getElementById('cart-items');
+            const cartTotalElement = document.getElementById('cart-total');
+            
+            if (cart.length === 0) {
+                cartItemsContainer.innerHTML = '<p class="text-center text-gray-400 text-sm mt-10">Keranjang kosong.</p>';
+                cartTotalElement.innerText = 'Rp0';
+            } else {
+                cartItemsContainer.innerHTML = '';
+                let total = 0;
+                cart.forEach((item, index) => {
+                    total += item.price;
+                    const div = document.createElement('div');
+                    div.className = "flex gap-2 items-center justify-between border-b pb-2";
+                    div.innerHTML = `
+                        <div class="flex gap-2 items-center">
+                            <img src="${item.img}" class="w-10 h-10 object-cover rounded border">
+                            <div class="text-xs">
+                                <p class="line-clamp-1 font-medium">${item.name}</p>
+                                <p class="shopee-text font-bold">Rp${item.price.toLocaleString('id-ID')}</p>
+                            </div>
+                        </div>
+                        <button onclick="removeFromCart(${index})" class="text-gray-400 hover:text-red-500"><i class="fa-solid fa-trash"></i></button>
+                    `;
+                    cartItemsContainer.appendChild(div);
+                });
+                cartTotalElement.innerText = 'Rp' + total.toLocaleString('id-ID');
+            }
+        }
+
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            updateCartUI();
+        }
+
+        // 4. BUKA TUTUP KERANJANG
+        function toggleCart() {
+            const modal = document.getElementById('cart-modal');
+            const content = document.getElementById('cart-content');
+            
+            if (modal.classList.contains('hidden')) {
+                modal.classList.remove('hidden');
+                setTimeout(() => content.classList.remove('translate-x-full'), 10);
+            } else {
+                content.classList.add('translate-x-full');
+                setTimeout(() => modal.classList.add('hidden'), 300);
+            }
+        }
+
+        // 5. CHECKOUT KE WHATSAPP (FITUR UTAMA)
+        function checkoutWA() {
+            if (cart.length === 0) {
+                alert("Keranjang masih kosong, Kak!");
+                return;
+            }
+
+            let message = "Halo Kak, saya mau pesan:%0A%0A";
+            let total = 0;
+
+            cart.forEach((item, i) => {
+                message += `${i+1}. ${item.name} - Rp${item.price.toLocaleString('id-ID')}%0A`;
+                total += item.price;
+            });
+
+            message += `%0A*Total: Rp${total.toLocaleString('id-ID')}*%0A`;
+            message += "%0AMohon info ongkirnya ya Kak!";
+
+            // GANTI NOMOR DI SINI (Format: 628...)
+            const phoneNumber = "628123456789"; 
+            
+            window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
+        }
+    </script>
 </body>
 </html>
