@@ -3,166 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wannabeshop Official | Shopee Indonesia</title>
+    <title>Wannabeshop Official | Shopee Mall</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        body { background-color: #f5f5f5; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+        body { background-color: #f5f5f5; font-family: sans-serif; }
         .shopee-orange { color: #ee4d2d; }
         .bg-shopee-orange { background-color: #ee4d2d; }
-        .line-clamp-2 { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
-        .product-card:hover { transform: translateY(-2px); box-shadow: 0 4px 20px rgba(0,0,0,0.1); z-index: 10; }
-        .wa-float { position: fixed; bottom: 20px; right: 20px; background-color: #25d366; color: white; border-radius: 50px; padding: 12px 20px; font-weight: bold; box-shadow: 2px 2px 10px rgba(0,0,0,0.2); z-index: 100; transition: 0.3s; }
-        .wa-float:hover { background-color: #128c7e; transform: scale(1.1); }
+        .product-card:hover { transform: translateY(-2px); box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
     </style>
 </head>
 <body>
-
-    <a href="https://wa.me/628123456789" target="_blank" class="wa-float flex items-center gap-2">
-        <i class="fa-brands fa-whatsapp text-2xl"></i>
-        <span>Chat Penjual</span>
-    </a>
-
-    <header class="bg-white border-b sticky top-0 z-50">
-        <div class="container mx-auto px-4 py-3 flex items-center justify-between">
-            <div class="text-3xl font-bold text-[#ee4d2d] tracking-tighter">Shopee <span class="text-sm font-normal text-gray-500 italic">Mall</span></div>
-            <div class="flex-1 mx-6 hidden md:block">
-                <div class="flex">
-                    <input type="text" placeholder="Cari di Wannabeshop Official" class="w-full bg-gray-100 border p-2 px-4 rounded-l-sm outline-none focus:border-orange-500 border-r-0">
-                    <button class="bg-[#ee4d2d] text-white px-6 rounded-r-sm"><i class="fa-solid fa-magnifying-glass"></i></button>
-                </div>
+    <header class="bg-white border-b sticky top-0 z-50 py-3 shadow-sm">
+        <div class="container mx-auto px-4 flex items-center justify-between">
+            <div class="text-3xl font-bold bg-shopee-orange text-white px-3 py-1 rounded-sm">Shopee <span class="text-sm font-normal italic">Mall</span></div>
+            <div class="flex-1 mx-8 hidden md:block">
+                <input type="text" placeholder="Cari di toko ini..." class="w-full bg-gray-100 border p-2 px-4 rounded-sm focus:border-[#ee4d2d] outline-none">
             </div>
-            <div class="flex items-center gap-5 text-gray-600">
-                <div class="relative cursor-pointer">
-                    <i class="fa-solid fa-cart-shopping text-xl"></i>
-                    <span id="cart-count" class="absolute -top-2 -right-2 bg-[#ee4d2d] text-white text-[10px] rounded-full px-1.5 hidden">0</span>
-                </div>
-                <i class="fa-regular fa-user text-xl cursor-pointer"></i>
+            <div class="flex items-center gap-6 text-gray-600 text-xl">
+                <i class="fa-solid fa-cart-shopping cursor-pointer"></i>
+                <i class="fa-regular fa-user cursor-pointer"></i>
             </div>
         </div>
     </header>
 
     <main class="container mx-auto px-4 py-6">
-        
-        <section class="bg-white p-4 rounded-sm shadow-sm mb-6 border-b-4 border-[#ee4d2d]">
-            <div class="flex items-center justify-between mb-4 border-b pb-2">
-                <div class="flex items-center gap-3">
-                    <img src="https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/fb563c3f0a5531b5eecca5798da326d8.png" class="h-6">
-                    <div class="flex gap-1 text-white text-xs font-bold items-center">
-                        <span class="bg-black p-1 rounded-sm">02</span> :
-                        <span class="bg-black p-1 rounded-sm">15</span> :
-                        <span class="bg-black p-1 rounded-sm">49</span>
-                    </div>
-                </div>
-                <a href="#" class="text-[#ee4d2d] text-sm font-medium">Lihat Semua ></a>
+        <div class="bg-white p-6 rounded-sm shadow-sm flex items-center gap-6 mb-6">
+            <div class="relative">
+                <img src="https://via.placeholder.com/80" class="rounded-full border-2 border-gray-200">
+                <span class="absolute bottom-0 left-1/2 -translate-x-1/2 bg-red-600 text-white text-[10px] px-2 font-bold uppercase">Mall</span>
             </div>
-            
-            <div class="flex gap-4 overflow-x-auto pb-2 scrollbar-hide">
-                <div class="min-w-[160px] cursor-pointer group" onclick="addToCart('Kaos Polos Premium')">
-                    <div class="relative">
-                        <img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?w=200" class="rounded-sm w-full h-40 object-cover">
-                        <div class="absolute top-0 right-0 bg-yellow-300 text-[#ee4d2d] text-[10px] font-bold px-1.5 py-0.5">-50%</div>
-                    </div>
-                    <div class="mt-2">
-                        <p class="text-[#ee4d2d] font-bold text-lg text-center">Rp45.000</p>
-                        <div class="w-full bg-orange-200 h-4 rounded-full mt-1 relative overflow-hidden">
-                            <div class="bg-gradient-to-r from-orange-500 to-red-600 h-full w-[70%]"></div>
-                            <span class="absolute inset-0 text-[9px] text-white font-bold flex items-center justify-center uppercase">Terjual 15</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="min-w-[160px] cursor-pointer group" onclick="addToCart('Sepatu Running Sport')">
-                    <div class="relative">
-                        <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=200" class="rounded-sm w-full h-40 object-cover">
-                        <div class="absolute top-0 right-0 bg-yellow-300 text-[#ee4d2d] text-[10px] font-bold px-1.5 py-0.5">-30%</div>
-                    </div>
-                    <div class="mt-2">
-                        <p class="text-[#ee4d2d] font-bold text-lg text-center">Rp150.000</p>
-                        <div class="w-full bg-orange-200 h-4 rounded-full mt-1 relative overflow-hidden">
-                            <div class="bg-gradient-to-r from-orange-500 to-red-600 h-full w-[90%]"></div>
-                            <span class="absolute inset-0 text-[9px] text-white font-bold flex items-center justify-center uppercase">Hampir Habis</span>
-                        </div>
-                    </div>
+            <div>
+                <h1 class="text-xl font-semibold">Wannabeshop Official</h1>
+                <p class="text-green-500 text-xs font-bold mt-1">● Online</p>
+                <div class="mt-3 flex gap-2">
+                    <button class="bg-[#ee4d2d] text-white px-5 py-1 text-sm rounded-sm hover:opacity-90">+ Ikuti</button>
+                    <button class="border border-gray-300 px-5 py-1 text-sm rounded-sm hover:bg-gray-50">Chat</button>
                 </div>
             </div>
-        </section>
+        </div>
 
-        <h2 class="text-gray-500 uppercase text-sm font-bold tracking-widest mb-4 border-b-2 border-[#ee4d2d] inline-block pb-1">Rekomendasi Baru</h2>
-        <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-2">
-            
-            <div class="product-card bg-white border border-transparent hover:border-[#ee4d2d] transition-all cursor-pointer flex flex-col" onclick="addToCart('Kaos Polos Cotton Combed')">
-                <img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?w=300" class="w-full aspect-square object-cover">
-                <div class="p-2 flex-1 flex flex-col">
-                    <h3 class="text-xs line-clamp-2 mb-2 text-gray-800">Wannabeshop - Kaos Polos Cotton Combed 30s Kualitas Distro Original</h3>
-                    <div class="mt-auto">
-                        <div class="flex justify-between items-center mb-1">
-                            <span class="text-[#ee4d2d] font-medium text-base">Rp45.000</span>
-                        </div>
-                        <div class="flex items-center gap-1 mb-2">
-                            <div class="flex text-yellow-400 text-[9px]">
+        <h2 class="text-gray-500 uppercase text-xs font-bold tracking-widest mb-4">Rekomendasi Produk</h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-3">
+            <div class="product-card bg-white border border-transparent transition-all cursor-pointer rounded-sm overflow-hidden">
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?w=300" class="w-full aspect-square object-cover">
+                    <div class="absolute top-0 right-0 bg-yellow-300 text-[#ee4d2d] text-[10px] font-bold px-1.5 py-0.5 rounded-bl-sm">-50%</div>
+                </div>
+                <div class="p-2">
+                    <h3 class="text-xs text-gray-800 line-clamp-2 leading-relaxed">Wannabeshop - Kaos Polos Cotton Combed 30s Kualitas Premium</h3>
+                    <div class="mt-4">
+                        <p class="text-[#ee4d2d] font-bold text-lg leading-none">Rp45.000</p>
+                        <div class="flex items-center gap-1 mt-1">
+                            <div class="text-yellow-400 text-[9px] flex gap-0.5">
                                 <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                             </div>
                             <span class="text-[10px] text-gray-400">| Terjual 1,2rb</span>
                         </div>
-                        <div class="text-[10px] text-gray-500 flex items-center gap-1">
-                            <i class="fa-solid fa-location-dot"></i> Kota Tangerang
-                        </div>
+                        <p class="text-[10px] text-gray-500 mt-1"><i class="fa-solid fa-location-dot"></i> Kota Tangerang</p>
                     </div>
                 </div>
             </div>
-
-            <div class="product-card bg-white border border-transparent hover:border-[#ee4d2d] transition-all cursor-pointer flex flex-col" onclick="addToCart('Smartphone Promo')">
-                <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=300" class="w-full aspect-square object-cover">
-                <div class="p-2 flex-1 flex flex-col">
-                    <h3 class="text-xs line-clamp-2 mb-2 text-gray-800">Wannabeshop - Smartphone Android 5G Murah Garansi Resmi</h3>
-                    <div class="mt-auto">
-                        <div class="flex justify-between items-center mb-1">
-                            <span class="text-[#ee4d2d] font-medium text-base">Rp1.200.000</span>
-                        </div>
-                        <div class="flex items-center gap-1 mb-2">
-                            <div class="flex text-yellow-400 text-[9px]">
-                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i>
-                            </div>
-                            <span class="text-[10px] text-gray-400">| Terjual 88</span>
-                        </div>
-                        <div class="text-[10px] text-gray-500 flex items-center gap-1">
-                            <i class="fa-solid fa-location-dot"></i> DKI Jakarta
-                        </div>
-                    </div>
-                </div>
             </div>
-
-        </div>
     </main>
-
-    <footer class="bg-white border-t mt-12 py-8 text-center text-gray-400 text-xs">
-        <div class="flex justify-center gap-4 mb-4 text-lg">
-            <i class="fa-brands fa-facebook"></i>
-            <i class="fa-brands fa-instagram"></i>
-            <i class="fa-brands fa-twitter"></i>
-        </div>
-        <p>© 2026 Wannabeshop Official Store. All Rights Reserved.</p>
-    </footer>
-
-    <script>
-        let count = 0;
-        function addToCart(name) {
-            count++;
-            const badge = document.getElementById('cart-count');
-            badge.innerText = count;
-            badge.classList.remove('hidden');
-            
-            // Animasi Bounce pada Keranjang
-            badge.parentElement.classList.add('animate-bounce');
-            setTimeout(() => badge.parentElement.classList.remove('animate-bounce'), 500);
-
-            // Pesan Konfirmasi yang lebih keren
-            const toast = document.createElement('div');
-            toast.className = "fixed top-20 right-5 bg-black/80 text-white px-6 py-3 rounded-md shadow-2xl text-sm z-[100] border-l-4 border-green-500 transition-all";
-            toast.innerHTML = `<i class="fa-solid fa-circle-check text-green-500 mr-2"></i> ${name} ditambahkan!`;
-            document.body.appendChild(toast);
-            setTimeout(() => { toast.style.opacity = '0'; setTimeout(() => toast.remove(), 500); }, 2000);
-        }
-    </script>
 </body>
 </html>
